@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/logo_white.svg">
     <title>QR Code Generator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/9c25ec09dc.js" crossorigin="anonymous"></script>
@@ -12,7 +13,7 @@
         <nav class="navbar">
             <a href="index.php">
                 <div class="logo">
-                    <img src="logo.file" alt="Logo">
+                    <img src="public/logo_white.svg" alt="Company Logo">
                     <span>QR-Gen</span>
                 </div>
             </a>
@@ -22,9 +23,21 @@
             </div>
         </nav>
     </header>
-    <section class="container">
+    <main>
+        <section class="container">
             <h1>QR Code Generator</h1>
-    </section>
+            <div id="qr-result">
+                <img src="public/QRexample.png" alt="QR Code" id="qr-code-image" download="qrcode.png">
+            </div>
+            <form id="qr-form" action="generate_qr.php" method="post">
+                <input type="text" id="qr-text" name="qr_text" placeholder="Insert URL or code here" value="">
+                <div class="button-container">
+                    <button type="submit" name="generate_qr">Generate QR</button>
+                    <button type="button" id="download-qr" disabled>Download QR</button>
+                </div>
+            </form>
+        </section>
+    </main>
     <script src="scanner.js"></script>
 </body>
 </html>
